@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17172e">
+  <meta name="description" content="The Fatal Mistake: a 3D bedroom tycoon about questionable code, fresh air, and one very ambitious browser.">
+  <title>The Fatal Mistake</title>
+  <link rel="icon" href="FatalMistake02.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="renderer.js" defer></script>
+  <script src="content.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body data-scene="title">
+  <canvas id="world" aria-label="Three-dimensional game world"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div id="boot-error" class="boot-error" hidden></div>
+
+  <header id="topbar">
+    <a class="brand" href="#" aria-label="The Fatal Mistake" data-act="brand"><span class="brand-mark">f.</span><span>THE FATAL<br><b>MISTAKE</b></span></a>
+    <div class="location"><span class="live-dot"></span><div><b id="location">BEDROOM / LOCALHOST</b><span id="chapter">A very normal morning</span></div></div>
+    <div class="top-right"><div class="wallet"><small>STUDIO BALANCE</small><strong id="cash">$180</strong><span id="rate">$0 / sec</span></div><button class="icon-button" id="sound-toggle" data-act="sound" title="Toggle synthesized sound" aria-label="Toggle sound">♪</button><button class="icon-button" data-act="settings" title="Pause and settings" aria-label="Pause and settings">Ⅱ</button></div>
+  </header>
+
+  <main>
+    <section id="title-screen" aria-labelledby="game-title">
+      <div class="title-copy"><div class="eyebrow"><span></span> AN EXTREMELY ONLINE ADVENTURE</div><h1 id="game-title">THE FATAL<br><em>MISTAKE<span>.</span></em></h1><p class="title-description">One teenager. Twelve questionable ideas.<br>A tragic encounter with the outside world.</p><div class="title-profile"><img src="FatalMistake02.png" alt="FatalMistake02's profile picture"><div><b>FatalMistake02</b><span>last seen: probably at his desk</span></div><i>LV. 16</i></div><div id="title-actions"></div><p class="title-footnote">A 3D story + bedroom tycoon · Saves on this device</p></div>
+      <div class="scene-caption"><span class="caption-line"></span><div>WHERE GREAT IDEAS BEGIN<small>…and graphics cards go to retire.</small></div></div>
+    </section>
+
+    <aside id="studio-panel" aria-label="Studio management" hidden><div id="panel-content"></div></aside>
+    <section id="quest-hud" hidden><div class="eyebrow">CURRENT EXPEDITION</div><h2 id="quest-title"></h2><p id="objective"></p><div id="quest-meter" class="meter"><div></div></div><button class="text-button" data-act="retreat">↩ Return to bedroom</button></section>
+    <canvas id="minimap" width="160" height="160" aria-label="Expedition map" hidden></canvas>
+    <div id="world-labels" aria-hidden="true"></div>
+    <div id="speech" hidden></div>
+    <section id="subtitle" aria-live="polite" hidden><span id="speaker"></span><p id="subtitle-text"></p></section>
+    <div id="interaction-hint" hidden></div>
+    <div id="toast-stack" role="status" aria-live="polite"></div>
+
+    <nav id="dock" aria-label="Studio views" hidden><button data-act="view" data-view="projects" class="selected"><span>⌘</span>Projects</button><button data-act="view" data-view="workshop"><span>⚙</span>Workshop</button><button data-act="view" data-view="expeditions"><span>↗</span>Expeditions</button><button data-act="view" data-view="journal"><span>≡</span>Journal</button></nav>
+    <div id="helpbar"><span id="help-text">A game about going outside. Eventually.</span><span id="save-label">LOCAL SAVE</span></div>
+    <button id="skip-intro" class="pill-button" data-act="skip" hidden>Skip opening ↗</button>
+    <div id="touch-controls" hidden aria-label="Touch controls"><div class="dpad"><button data-key="KeyW" aria-label="Move forward">↑</button><button data-key="KeyA" aria-label="Move left">←</button><button data-key="KeyS" aria-label="Move backward">↓</button><button data-key="KeyD" aria-label="Move right">→</button></div><div class="touch-actions"><button data-key="ShiftLeft">DASH</button><button data-key="KeyE">USE</button><button data-key="Space">ACT</button></div></div>
+    <div id="modal-root"></div>
+  </main>
+  <noscript>This game needs JavaScript and a browser with WebGL enabled.</noscript>
+</body>
+</html>
